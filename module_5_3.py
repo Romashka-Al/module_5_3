@@ -21,42 +21,58 @@ class House:
 
 
     def __eq__(self, other):
+        if isinstance(other, int):
+            return self.numbers_of_floors == other
         return self.numbers_of_floors == other.numbers_of_floors
 
 
     def __lt__(self, other):
+        if isinstance(other, int):
+            return self.numbers_of_floors < other
         return self.numbers_of_floors < other.numbers_of_floors
 
 
     def __le__(self, other):
+        if isinstance(other, int):
+            return self.numbers_of_floors <= other
         return self.numbers_of_floors <= other.numbers_of_floors
 
 
     def __gt__(self, other):
+        if isinstance(other, int):
+            return self.numbers_of_floors > other
         return self.numbers_of_floors > other.numbers_of_floors
 
 
     def __ge__(self, other):
+        if isinstance(other, int):
+            return self.numbers_of_floors >= other
         return self.numbers_of_floors >= other.numbers_of_floors
 
 
     def __ne__(self, other):
+        if isinstance(other, int):
+            return self.numbers_of_floors != other
         return self.numbers_of_floors != other.numbers_of_floors
 
 
     def __add__(self, value):
-        self.numbers_of_floors += value
+        if isinstance(value, int):
+            self.numbers_of_floors += value
         return self
 
 
     def __radd__(self, value):
-        self.numbers_of_floors += value
+        if isinstance(value, int):
+            self.numbers_of_floors += value
         return self
 
 
     def __iadd__(self, value):
-        self.numbers_of_floors += value
+        if isinstance(value, int):
+            self.numbers_of_floors += value
         return self
+
 
 house1 = House("ЖК Эльбрус", 10)
 house2 = House("ЖК Воробьёвы горы", 20)
